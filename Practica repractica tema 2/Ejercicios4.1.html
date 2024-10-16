@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id = "pregunta"></h2>
+    <h3 id = "respuesta"></h3>
+    <script>
+        let dia=parseInt(prompt("Introduzca el dia: "));
+        let mes=parseInt(prompt("Introduzca el mes: "));
+        if(!(dia >0 && dia <32) || !(mes >0 && mes < 13)){
+            alert("Introduzca una fecha valida");
+
+        }else if(dia==null || mes==null){
+            document.getElementById("pregunta").innerHTML+="Ha cancelado la ejecucion";
+        }
+        else{
+
+            let dias = 30*(mes-1)+dia;
+
+            document.getElementById("pregunta").innerHTML+="Dias transcurridos desde "+dia+"/"+mes;
+            document.getElementById("respuesta").innerHTML+=dias;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id = "pregunta"></h2>
+    <h3 id = "respuesta"></h3>
+    <script>
+
+        let numAzar=Math.trunc(Math.random()*21+100);   //Truco para mi: Math.random() * (rango+1) + minimo.
+        let numerosGenerados="";
+        let cantidadAcabadosCero = 0;
+        let cantImpares = 0;
+        let sumaImpares = 0;
+
+        while(numAzar!=120){
+
+            numerosGenerados+=" "+numAzar;            //Se debe crear un string, no podemos escribir directamente los numeros en el bucle con innerHTML.
+
+            if(numAzar%2!=0){
+                sumaImpares+=numAzar;
+                cantImpares++;
+            }else if(numAzar%10==0){
+                cantidadAcabadosCero++;
+            }
+
+            numAzar=Math.trunc(Math.random()*21+100);               //Volvemos a tirar los dados
+        }
+        
+        document.getElementById("pregunta").innerHTML+="Numeros generados: <br>"+numerosGenerados;
+        document.getElementById("respuesta").innerHTML+="Cantidad de acabados en 0: "+cantidadAcabadosCero+"<br>Media total de impares: "+sumaImpares/cantImpares;
+
+    </script>
+
+</body>
+</html>

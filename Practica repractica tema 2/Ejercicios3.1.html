@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id = "pregunta"></h2>
+    <h3 id = "resultado"></h3>
+        <script>
+            let num = parseInt(prompt("Introduce un numero"));
+            if(num<1 || num==NaN){
+                alert("El numero debe ser positivo");
+            }else if(num==null){
+                alert("Ha cancelado la entrada");
+            }
+            else{
+            document.getElementById("pregunta").innerHTML+="Numeros pares desde "+num+" hasta 0:";
+                //Bucle para imprimir los pares en orden descendente.
+                for(let i=num;i>0;i--){
+                    if(i%2==0){
+                        document.getElementById("resultado").innerHTML+=i+" es par<br>";
+                    }
+                }
+
+            }
+
+        </script>
+
+</body>
+</html>

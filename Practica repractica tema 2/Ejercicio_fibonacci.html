@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id ="pregunta"></h2>
+    <h3 id = "respuesta"></h3>
+    <script>
+
+//1.- Crear un script que me obtenga, según un valor dado obtenido X, la secuencia de los primeros X números fibonacci.
+
+        let num = parseInt(prompt("Introduzca un indice limite"));
+
+        if(!isNaN(num) && num>=1){
+
+            let fibonacci="";
+            let viejoNum = 0;
+            let numActual = 1;
+            let nuevoNum = 1;
+            for(let i = 0; i<num;i++){
+
+                fibonacci+=" "+nuevoNum;
+                nuevoNum=numActual+viejoNum;
+                viejoNum=numActual;
+                numActual=nuevoNum;
+
+
+            }
+
+            document.getElementById("pregunta").innerHTML+="Los "+num+" primeros numeros de fibonacci son:";
+            document.getElementById("respuesta").innerHTML+=fibonacci;
+        }else if(num<1){
+            document.getElementById("pregunta").innerHTML+="Introduzca un indice positivo";
+        }else{
+            document.getElementById("pregunta").innerHTML+="Que tenga un buen dia";
+
+        }
+
+    </script>
+</body>
+</html>

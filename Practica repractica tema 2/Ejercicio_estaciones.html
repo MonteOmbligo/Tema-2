@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="respuesta"></h2>
+    <script>
+//    2.-Crear un script que le paso el mes, y me dice la estación del año (Primavera, verano, otoño e invierno).
+
+        let mes = prompt("Introduzca el mes").toLowerCase();
+
+        //Deberia de haber alguna forma de hacerlo con un array pero no los hemos visto en este tema.
+        switch(mes) {
+            
+                case 'diciembre':
+                case 'enero':
+                case 'febrero':
+                case 'marzo':
+                    estacion = "invierno";
+                    break;
+
+                case 'abril':
+                case 'mayo':
+                case 'junio':
+                    estacion = "primavera";
+                    break;
+
+                case 'julio':
+                case 'agosto':
+                case 'septiembre':
+                    estacion = "verano";
+                    break;
+
+                case 'octubre':
+                case 'noviembre':
+                    estacion = "otoño";
+                    break;
+
+                default:
+                    estacion = "No se reconoce el mes";
+}
+            document.getElementById("respuesta").innerHTML+="La estacion de "+mes+" es "+estacion;
+    </script>
+
+</body>
+</html>
